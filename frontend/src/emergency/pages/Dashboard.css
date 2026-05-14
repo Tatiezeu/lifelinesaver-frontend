@@ -1,0 +1,113 @@
+.dashboard h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: #000;
+}
+
+.dashboard {
+  padding: 2rem;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.month-select {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+}
+
+.card-container {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.info-card {
+  flex: 1;
+  min-width: 200px;
+  border-radius: 20px;
+  padding: 1.2rem;
+  color: white;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #6e8efb, #a777e3);
+  transition: transform 0.2s ease-in-out;
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+}
+
+.card-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.card-number {
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-label {
+  margin-top: 0.2rem;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+
+.gradient-blue {
+  background: linear-gradient(135deg, #4f46e5, #6366f1);
+}
+
+.gradient-cyan {
+  background: linear-gradient(135deg, #0ea5e9, #06b6d4);
+}
+
+.gradient-green {
+  background: linear-gradient(135deg, #10b981, #34d399);
+}
+
+.chart-section {
+  margin-top: 2rem;
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 20px;
+  box-shadow: 0 5px 25px rgba(0,0,0,0.06);
+}
+.welcome-message {
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  background: #4caf50;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 8px;
+  font-weight: 500;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  animation: fadeInOut 2s forwards;
+  z-index: 1000;
+}
+
+.welcome-message .username {
+  font-weight: 700;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateY(-10px); }
+  20% { opacity: 1; transform: translateY(0); }
+  80% { opacity: 1; }
+  100% { opacity: 0; transform: translateY(-10px); }
+}

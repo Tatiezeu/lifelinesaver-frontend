@@ -1,0 +1,332 @@
+.users-container {
+  padding: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: var(--bg-primary);
+  min-height: calc(100vh - 80px);
+}
+
+.users-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2.5rem;
+}
+
+.header-title {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.header-icon {
+    color: var(--accent-color);
+}
+
+.add-user-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Modal Form Refinements */
+.input-with-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-icon {
+    position: absolute;
+    left: 12px;
+    color: var(--text-secondary);
+    opacity: 0.6;
+}
+
+.input-with-icon input {
+    padding-left: 40px !important;
+    width: 100%;
+}
+
+/* Table Th Refinements */
+.th-flex {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.action-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.actions-td {
+    white-space: nowrap;
+}
+
+.warning-icon {
+    margin-bottom: 1.5rem;
+}
+
+/* Add User Button */
+.add-user-btn {
+  background-color: var(--accent-color);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.2);
+}
+
+.add-user-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 123, 255, 0.3);
+  filter: brightness(1.1);
+}
+
+/* Modal Overlay */
+.form-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+}
+
+/* Modal Form */
+.add-user-form-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--bg-secondary);
+  border-radius: 20px;
+  padding: 2.5rem;
+  box-shadow: var(--shadow);
+  z-index: 1001;
+  width: 420px;
+  max-width: 95vw;
+  border: 1px solid var(--border-color);
+}
+
+.add-user-form-modal h3 {
+  margin: 0 0 1.5rem;
+  font-weight: 700;
+  text-align: center;
+  color: var(--text-primary);
+  font-size: 1.5rem;
+}
+
+.add-user-form-modal form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.add-user-form-modal label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+.add-user-form-modal input,
+.add-user-form-modal select {
+  padding: 0.8rem 1rem;
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+  font-size: 1rem;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: border-color 0.2s;
+}
+
+.add-user-form-modal input:focus {
+    border-color: var(--accent-color);
+    outline: none;
+}
+
+.form-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.submit-btn {
+  flex: 2;
+  background-color: #10b981;
+  color: white;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: all 0.2s;
+}
+
+.cancel-btn {
+  flex: 1;
+  background-color: transparent;
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 0.8rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.cancel-btn:hover {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+/* Table Card */
+.table-card {
+    background: var(--bg-secondary);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+}
+
+.users-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.users-table th {
+  background-color: var(--bg-primary);
+  padding: 1.25rem 1.5rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  text-align: left;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.users-table td {
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-primary);
+  font-size: 0.95rem;
+}
+
+.users-table tr:last-child td {
+    border-bottom: none;
+}
+
+.users-table tr:hover td {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+.dark-mode .users-table tr:hover td {
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+/* Status Badges */
+.status-badge {
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.status-active {
+  background-color: rgba(16, 185, 129, 0.1);
+  color: #10b981;
+}
+
+.status-suspended {
+  background-color: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+}
+
+/* Action Buttons */
+.action-btn {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.85rem;
+  border: 1px solid transparent;
+  transition: all 0.2s;
+  margin-right: 0.5rem;
+}
+
+.action-btn.activate {
+  background-color: rgba(16, 185, 129, 0.1);
+  color: #10b981;
+}
+
+.action-btn.suspend {
+  background-color: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+}
+
+.action-btn.delete {
+  background-color: transparent;
+  color: var(--text-secondary);
+  border-color: var(--border-color);
+}
+
+.action-btn:hover {
+  filter: brightness(0.95);
+  transform: translateY(-1px);
+}
+
+/* Modals for confirm */
+.confirm-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(2px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.confirm-modal-box {
+  background: var(--bg-secondary);
+  padding: 2.5rem;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+  border: 1px solid var(--border-color);
+}
+
+.confirm-modal-box p {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 2rem;
+}
+
+.confirm-btns {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}

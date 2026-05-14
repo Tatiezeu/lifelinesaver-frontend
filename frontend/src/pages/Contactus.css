@@ -1,0 +1,269 @@
+/* src/styles/Contact.css */
+
+.contact-section {
+  font-family: 'Segoe UI', sans-serif;
+  padding: 0;
+  margin: 0;
+  background-color: #f8f9fa;
+}
+
+/* HERO SECTION */
+.contact-hero {
+  position: relative; /* needed for overlay */
+  padding: 100px 10%;
+  background: url('/assets/contact.jpg') no-repeat center center;
+  background-size: cover;
+  color: white;
+  text-align: center;
+}
+.contact-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* semi-transparent black */
+  z-index: 0;
+}
+
+.contact-hero h2 {
+  position: relative; /* stay above overlay */
+  z-index: 1;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.7); /* stronger shadow */
+  margin-bottom: 15px;
+  font-size: 3.9rem;
+  font-weight: 700;
+  color: white;
+}
+
+.contact-btn {
+  position: relative; /* stay above overlay */
+  z-index: 1;
+  padding: 12px 30px;
+  font-size: 1rem;
+  background: linear-gradient(90deg, #007bff, #00c6ff);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.contact-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
+
+/* CARDS */
+.contact-cards {
+  padding: 50px 10%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 30px;
+  background-color: #f8f9fa; /* plain background below hero */
+}
+
+.contact-card {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  padding: 25px 20px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.contact-icon {
+  font-size: 40px;
+  color: #007bff;
+  margin-bottom: 15px;
+}
+
+.contact-card h3 {
+  margin-bottom: 10px;
+}
+
+.contact-card span {
+  font-size: 13px;
+  color: #666;
+}
+
+/* FORM AND SIDE SECTION */
+.contact-main {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 40px 20px;
+  gap: 30px;
+  justify-content: center;
+}
+
+.contact-form {
+  flex: 2;
+  min-width: 300px;
+  max-width: 700px;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  background-color: white;
+  color: #000;
+  width: 100%;
+}
+
+.contact-form textarea {
+  min-height: 240px;
+}
+
+.send-btn {
+  background: linear-gradient(to right, #007bff, #00bcd4);
+  color: white;
+  border: none;
+  padding: 12px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.send-btn:hover {
+  opacity: 0.9;
+}
+
+.contact-tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.tab {
+  padding: 10px 20px;
+  border: 1px solid #007bff;
+  background: white;
+  color: #007bff;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.tab.active {
+  background: #007bff;
+  color: white;
+}
+
+/* SIDE CONTACT SECTION */
+.contact-side {
+  flex: 1;
+  min-width: 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Quick Contact */
+.quick-contact {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  padding: 30px 35px;
+}
+
+.quick-contact h4 {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #162a49;
+  margin-bottom: 25px;
+}
+
+.contact-info-box {
+  display: flex;
+  align-items: center;
+  border-radius: 12px;
+  padding: 15px 25px;
+  margin-bottom: 18px;
+  gap: 20px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: default;
+}
+
+.contact-info-box .icon {
+  font-size: 24px;
+  flex-shrink: 0;
+  color: white;
+}
+
+.phone-box {
+  background-color: #27ae60; /* green */
+}
+
+.email-box {
+  background-color: #286df7; /* blue */
+}
+
+.contact-info-box p {
+  margin: 0;
+}
+
+.contact-info-box p:first-child {
+  font-weight: 700;
+  color: white;
+}
+
+.contact-info-box .contact-detail {
+  font-weight: 400;
+  color: white;
+  margin-top: 4px;
+}
+
+/* Emergency Contact */
+.emergency-contact {
+  background: linear-gradient(to right, #ff416c, #ff4b2b);
+  border-radius: 16px;
+  padding: 30px 35px;
+  color: white;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+.emergency-contact h4 {
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: white;
+}
+
+.emergency-contact p {
+  font-size: 1rem;
+  margin: 0 0 15px 0;
+  font-weight: 500;
+  color: white;
+}
+
+.emergency-number-box {
+  background-color: rgba(255, 255, 255, 0.3);
+  padding: 18px 28px;
+  border-radius: 16px;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: white;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.emergency-contact span {
+  display: block;
+  font-style: italic;
+  color: rgba(255,255,255,0.8);
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-align: center;
+}

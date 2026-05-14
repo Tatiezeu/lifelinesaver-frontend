@@ -1,0 +1,229 @@
+/* Container */
+.settings-container {
+  padding: 20px;
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* left align all content */
+  box-sizing: border-box;
+}
+
+/* Light mode (default) */
+body {
+  background-color: #f8fafc;
+  color: #334155; /* text color in light mode */
+}
+
+.settings-title {
+  font-size: 22px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Theme toggle */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.5rem 0;
+  justify-content: flex-start; /* left align toggle */
+}
+
+.toggle-slider {
+  width: 50px;
+  height: 26px;
+  background-color: #ccc;
+  border-radius: 20px;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.toggle-slider.active {
+  background-color: #4caf50;
+}
+
+.toggle-thumb {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.toggle-slider.active .toggle-thumb {
+  transform: translateX(24px);
+}
+
+.toggle-label {
+  font-weight: 500;
+  color: #333;
+}
+
+/* Profile form */
+.profile-form {
+  width: 100%;
+  max-width: 100%;
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  box-sizing: border-box;
+}
+
+.profile-form h3 {
+  margin-bottom: 15px;
+  color: #222;
+  font-size: 18px;
+}
+
+.profile-form label {
+  display: block;
+  margin: 10px 0 5px;
+  font-size: 14px;
+  color: #555;
+}
+
+.profile-form input {
+  width: 100%;
+  padding: 10px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  background-color: #f8fafc;
+  color: #334155;
+  box-sizing: border-box;
+}
+
+.update-btn {
+  width: 100%;
+  background-color: #4f46e5;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.update-btn:hover {
+  background-color: #3730a3;
+}
+
+/* Smooth transition */
+body,
+.profile-form,
+input,
+label,
+.toggle-slider,
+.update-btn {
+  transition: all 0.3s ease-in-out;
+}
+
+/* Profile image */
+.profile-pic-preview {
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.profile-pic-preview img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Enhanced Dark Mode for Settings */
+body.dark {
+  background-color: #0f172a;
+  color: #e2e8f0;
+}
+
+body.dark .settings-container {
+  background-color: #0f172a;
+}
+
+body.dark .settings-title {
+  color: #e2e8f0;
+}
+
+body.dark .profile-form {
+  background-color: #1e293b;
+  border: 1px solid #334155;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+body.dark .profile-form h3 {
+  color: #e2e8f0;
+}
+
+body.dark label {
+  color: #cbd5e1;
+}
+
+body.dark input {
+  background-color: #334155;
+  color: #f8fafc;
+  border-color: #475569;
+}
+
+body.dark input::placeholder {
+  color: #cbd5e1;
+}
+
+body.dark .update-btn {
+  background-color: #6366f1;
+}
+
+body.dark .update-btn:hover {
+  background-color: #4f46e5;
+}
+
+body.dark .toggle-label {
+  color: #e2e8f0;
+}
+
+body.dark .toggle-slider {
+  background-color: #475569;
+}
+
+body.dark .toggle-slider.active {
+  background-color: #10b981;
+}
+
+body.dark .profile-pic-preview img {
+  box-shadow: 0 0 0 3px #475569;
+}
+
+/* Additional dark mode enhancements */
+body.dark .settings-container {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+}
+
+body.dark .profile-form {
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+}
+
+body.dark input:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+}
+
+body.dark .toggle-slider {
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
+}
+
+body.dark .toggle-thumb {
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}

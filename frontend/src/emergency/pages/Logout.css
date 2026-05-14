@@ -1,0 +1,30 @@
+.logout-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5f7fa;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.logout-box {
+  background: white;
+  padding: 2.5rem 3rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  color: #333;
+  max-width: 400px;
+  width: 90%;
+}
+
+.logout-box h2 {
+  margin-bottom: 1rem;
+  font-weight: 600;
+  font-size: 1.8rem;
+}
+
+.logout-box p {
+  font-size: 1.1rem;
+  color: #555;
+}

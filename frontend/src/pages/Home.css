@@ -1,0 +1,208 @@
+/* ------------- Global Styles ------------- */
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+/* ------------- Home Section ------------- */
+.home-container {
+  width: 100%;
+  min-height: 100vh;  /* full viewport height */
+  position: relative;
+}
+
+/* Carousel */
+.carousel {
+  width: 100%;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  transition: background-image 1s ease-in-out;
+}
+
+/* Overlay text */
+.carousel-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 40px 30px;
+  border-radius: 10px;
+  max-width: 90%;
+}
+
+.carousel-overlay h1 {
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.carousel-overlay .brand {
+  color:#007bff;
+}
+
+.shop-now {
+  padding: 12px 28px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.shop-now:hover {
+  background-color: #0056b3;
+}
+
+/* ------------- Intro Section ------------- */
+.intro-container {
+  padding: 80px 10%;
+  text-align: center;
+  background-color: #ffffff;
+  color: #333;
+}
+
+.intro-title {
+  font-size: 42px;
+  font-weight: bold;
+  color: #007bff;
+  margin-bottom: 15px;
+}
+
+.intro-subtitle {
+  font-size: 22px;
+  color: #555;
+  margin-bottom: 25px;
+  font-style: italic;
+}
+
+.intro-text {
+  font-size: 18px;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto 40px auto;
+  color: #444;
+}
+
+.intro-features {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.intro-feature {
+  background: #f1f5ff;
+  color: #007bff;
+  padding: 15px 25px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  transition: transform 0.3s;
+}
+
+.intro-feature:hover {
+  transform: translateY(-5px);
+}
+
+.intro-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: #fff;
+  padding: 14px 32px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  border: 2px solid #007bff;
+  color: #007bff;
+  padding: 14px 32px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+.lifeline-intro-section {
+  background: #f9fbff;
+  padding: 60px 10%;
+  max-width: 1000px;
+  margin: 40px auto 80px auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #222;
+}
+
+.lifeline-content {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.lifeline-tagline {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #007bff;
+  margin-bottom: 10px;
+  border-bottom: 3px solid #007bff;
+  padding-bottom: 6px;
+}
+
+.lifeline-title {
+  font-size: 3.5rem;
+  font-weight: 900;
+  margin-bottom: 12px;
+  color: #004085;
+}
+
+.lifeline-subtitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 24px;
+  color: #1c3d5a;
+  font-style: italic;
+}
+
+.lifeline-description {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: #444;
+}

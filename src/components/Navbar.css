@@ -1,0 +1,87 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 5%;
+  background: rgba(0, 0, 0, 0.7); /* semi-transparent background */
+  backdrop-filter: blur(6px);     /* soft blur for readability */
+  color: white;
+  position: fixed;   /* fixed so it stays on scroll */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: background 0.3s ease; /* smooth fade effect */
+}
+.navbar h1 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* Logo */
+.navbar-logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #007bff;
+}
+
+/* Right-side icons */
+.navbar-icons {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  background-color: white;
+  color: #000;
+  border-radius: 8px;
+  padding: 10px;
+  min-width: 80px;
+  text-align: center;
+  top: 60px;
+  right: 2%;
+  z-index: 999;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.label {
+  color: #000;
+  padding: 4px 8px;
+}
+
+/* Centered navigation tabs */
+.navbar-center {
+  display: flex;
+  gap: 30px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.navbar-center .nav-link {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  font-size: 1rem;
+  padding-bottom: 5px;
+  transition: color 0.3s, border-bottom 0.3s;
+  border-bottom: 2px solid transparent;
+}
+
+.navbar-center .nav-link:hover {
+  color: #007bff;
+  border-bottom: 2px solid #007bff;
+  cursor: pointer;
+}
+
+/* Active tab */
+.navbar-center .nav-link.active {
+  color: #007bff;
+  border-bottom: 2px solid #007bff;
+}

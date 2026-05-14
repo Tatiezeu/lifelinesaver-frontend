@@ -1,0 +1,159 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body centering */
+body {
+  height: 100vh;
+  background: #f5f6fa; /* light background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Container */
+.signin-container {
+  display: flex;
+  width: 850px;       /* moderate width */
+  height: 500px;      /* moderate height */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  background: white;
+  margin-left: 17%;
+  margin-top: 3%;
+}
+
+/* Left section */
+.signin-left {
+  flex: 1;
+  background: linear-gradient(135deg, #9b4dff, #4facfe);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  padding: 20px;
+  position: relative;
+}
+
+.welcome-text h1 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.welcome-text p {
+  opacity: 0.9;
+}
+
+.site-link {
+  position: absolute;
+  bottom: 15px;
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+/* Right section */
+.signin-right {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #fff;
+}
+
+.good-morning {
+  color: #b74fff;
+}
+
+.login-text {
+  margin: 5px 0 20px;
+  font-size: 1rem;
+}
+
+.login-highlight {
+  color: #b74fff;
+  font-weight: bold;
+}
+
+/* Form */
+.signin-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.signin-form label {
+  font-size: 0.85rem;
+  margin: 10px 0 5px;
+  color: #666;
+}
+
+.signin-form input {
+  padding: 8px;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  background-color: #fff;
+  color: black;
+  outline: none;
+  font-size: 0.9rem;
+  transition: border-color 0.3s ease;
+}
+
+.signin-form input:focus {
+  border-bottom: 2px solid #4facfe;
+}
+
+/* Options row */
+.form-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15px 0;
+  font-size: 0.85rem;
+}
+
+.forgot-password {
+  text-decoration: none;
+  color: #888;
+}
+
+.forgot-password:hover {
+  color: #4facfe;
+}
+
+/* Submit button */
+.signin-form button {
+  background: linear-gradient(to right, #9b4dff, #4facfe);
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+  text-transform: uppercase;
+  transition: opacity 0.3s ease;
+}
+
+.signin-form button:hover {
+  transform: translateY(-3px) scale(1.03); /* slight lift */
+  background: linear-gradient(to right, #9b4dff, #4facfe);
+}
+
+/* Create account link */
+.create-account {
+  text-align: center;
+  margin-top: 20px;
+  color: #777;
+  cursor: pointer;
+}
+
+.create-account:hover {
+  color: #4facfe;
+}
+

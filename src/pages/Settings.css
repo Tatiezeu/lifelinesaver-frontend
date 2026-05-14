@@ -1,0 +1,131 @@
+/* Container */
+.settings-container {
+  padding: 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  background: var(--bg-primary);
+  flex: 1;
+}
+
+/* Profile form */
+.profile-form {
+  width: 100%;
+  max-width: 100%;
+  background: var(--bg-secondary);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  box-sizing: border-box;
+}
+
+.profile-form h3 {
+  margin-bottom: 15px;
+  color: var(--text-primary);
+  font-size: 18px;
+}
+
+.profile-pic-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.profile-pic-preview {
+  margin-bottom: 1rem;
+}
+
+.profile-pic-preview img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: var(--shadow);
+}
+
+.upload-btn-label {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background-color: var(--accent-color);
+  color: white !important;
+  text-align: center;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: opacity 0.3s ease;
+  box-sizing: border-box;
+}
+
+.upload-btn-label:hover {
+  opacity: 0.9;
+}
+
+.form-group-settings {
+  width: 100%;
+}
+
+.form-group-settings label {
+  display: block;
+  margin: 10px 0 5px;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.form-group-settings input {
+  width: 100%;
+  padding: 10px;
+  font-size: 15px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  margin-bottom: 20px;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  box-sizing: border-box;
+}
+
+.update-btn {
+  width: 100%;
+  background-color: var(--accent-color);
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  box-sizing: border-box;
+}
+
+.update-btn:hover {
+  opacity: 0.9;
+}
+
+.update-message {
+  width: 100%;
+  text-align: center;
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+.update-message.success {
+  background-color: rgba(16, 185, 129, 0.1);
+  color: #10b981;
+}
+
+.update-message.error {
+  background-color: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+}
+
+.readonly-input {
+  background-color: #f3f4f6 !important;
+  cursor: not-allowed;
+}

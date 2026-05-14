@@ -1,0 +1,88 @@
+/* Hero section with background image */
+.services-hero {
+  position: relative; /* needed for overlay */
+  padding: 100px 10%;
+  background: url('/assets/services.jpg') no-repeat center center;
+  background-size: cover;
+  color: white;
+  text-align: center;
+}
+
+/* Overlay to darken the image for better text readability */
+.services-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* semi-transparent black */
+  z-index: 0;
+}
+
+.services-hero h2,
+.services-hero p {
+  position: relative; /* stay above overlay */
+  z-index: 1;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.7); /* stronger shadow */
+  margin-bottom: 15px;
+}
+
+.services-hero h2 {
+  font-size: 3.9rem;
+  font-weight: 700;
+  color: white;
+}
+
+.discover-btn {
+  position: relative; /* stay above overlay */
+  z-index: 1;
+  padding: 12px 30px;
+  font-size: 1rem;
+  background: linear-gradient(90deg, #007bff, #00c6ff);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.discover-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
+
+/* Services cards section */
+.services-cards {
+  padding: 50px 10%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 30px;
+  background-color: #f8f9fa; /* plain background below hero */
+}
+
+.service-card {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  padding: 25px 20px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+.service-icon {
+  font-size: 40px;
+  color: #007bff;
+  margin-bottom: 15px;
+}
+
+.service-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #000;
+}

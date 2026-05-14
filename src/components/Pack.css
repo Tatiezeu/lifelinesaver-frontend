@@ -1,0 +1,160 @@
+.pricing-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 50px;
+  background: white; /* keep this dark background */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.pricing-title {
+  text-align: center;
+  font-size: 3rem;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  color: #000; /* your theme color */
+  font-weight: 700;
+}
+
+
+.pricing-card {
+  background: white;
+  border-radius: 15px;
+  padding: 30px;
+  width: 320px;
+  box-shadow: 0px 6px 15px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.pricing-card:hover {
+  transform: translateY(-8px);
+}
+
+.pricing-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.pricing-header h2 {
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+}
+
+.price {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #111;
+}
+
+.price span {
+  font-size: 1rem;
+  color: #777;
+}
+
+.features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+  width: 100%;
+}
+
+.features li {
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+  font-size: 0.95rem;
+}
+
+.trial-info {
+  text-align: center;
+  background: #f9fafc;
+  padding: 12px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+  color: #444;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.subscribe-btn {
+  background: #007bff; /* updated to theme */
+  color: white;
+  border: none;
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  width: 100%;
+}
+
+.subscribe-btn:hover {
+  background: #0056b3; /* darker blue */
+}
+
+.demo-btn {
+  background: transparent;
+  color: #007bff; /* theme color */
+  border: 2px solid #007bff;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  width: 100%;
+}
+
+.demo-btn:hover {
+  background: #007bff;
+  color: white;
+}
+
+/* Both packages now follow theme */
+.hospital h2 {
+  color: #007bff;
+}
+
+.police h2 {
+  color: #007bff;
+}
+.demo-button-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.demo-btn:disabled {
+  background-color: #93c5fd;
+  cursor: not-allowed;
+}
+
+/* Progress bar */
+.demo-progress-bar {
+  width: 180px;
+  height: 6px;
+  background-color: #e5e7eb;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.demo-progress {
+  height: 100%;
+  background-color: #10b981;
+  width: 0%;
+  transition: width 0.05s linear;
+}
+
+/* Success message */
+.demo-success-message {
+  color: #10b981;
+  font-weight: bold;
+  font-size: 14px;
+}

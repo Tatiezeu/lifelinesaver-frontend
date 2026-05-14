@@ -1,0 +1,230 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body centering */
+body {
+  height: 100vh;
+  background: #f5f6fa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Container */
+.signup-container {
+  display: flex;
+  width: 850px;
+  height: 600px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  background: white;
+  margin-left: 17%;
+  margin-top: 1%;
+}
+
+/* Left section */
+.signup-left {
+  flex: 1;
+  background: linear-gradient(135deg, #9b4dff, #4facfe);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  padding: 20px;
+  position: relative;
+}
+
+.welcome-text h1 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.welcome-text p {
+  opacity: 0.9;
+}
+
+.site-link {
+  position: absolute;
+  bottom: 15px;
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+/* Right section */
+.signup-right {
+  flex: 1;
+  padding:  40px;
+  padding-top: 100px;
+  padding-bottom: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #fff;
+}
+
+.good-morning {
+  color: #b74fff;
+}
+
+.login-text {
+  margin: 2px 3px;
+  color: #000;
+  font-size: 1rem;
+}
+
+.login-highlight {
+  color: #b74fff;
+  font-weight: bold;
+}
+
+/* Form */
+.signup-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.signup-form label {
+  font-size: 0.85rem;
+  margin: 10px 0 5px;
+  color: #666;
+}
+
+.signup-form input,
+.signup-form select {
+  padding: 10px 12px;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  outline: none;
+  font-size: 0.9rem;
+  transition: border-color 0.3s ease;
+  background-color: #fff;
+  color: black;
+  width: 100%;
+}
+
+.signup-form input:focus,
+.signup-form select:focus {
+  border-bottom: 2px solid #4facfe;
+}
+
+/* Password wrapper */
+.password-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-wrapper input {
+  width: 100%;
+  padding-right: 40px; /* space for toggle icon */
+}
+
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+  color: #888;
+}
+
+/* Password strength indicator */
+.password-strength {
+  font-size: 0.8rem;
+  margin-top: 2px;
+  font-weight: bold;
+}
+
+.password-strength.weak {
+  color: #ff4d4f;
+}
+
+.password-strength.medium {
+  color: #fa8c16;
+}
+
+.password-strength.strong {
+  color: #52c41a;
+}
+
+/* Options row */
+.form-options {
+  margin: 8px 0;
+  font-size: 0.85rem;
+}
+
+.form-options a {
+  text-decoration: none;
+  color: #4facfe;
+}
+
+/* Submit button */
+.signup-form button {
+  background: linear-gradient(to right, #9b4dff, #4facfe);
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 12px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.signup-form button:hover {
+  transform: translateY(-2px) scale(1.02);
+  background: linear-gradient(to right, #9b4dff, #4facfe);
+}
+
+/* Error messages */
+.error {
+  color: #ff4d4f;
+  font-size: 0.75rem;
+  margin-top: 3px;
+}
+
+/* Already have account link */
+.already-account {
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  color: #777;
+}
+
+.already-account a {
+  color: #4facfe;
+  text-decoration: none;
+}
+
+.already-account a:hover {
+  text-decoration: underline;
+}
+/* Options row - align checkbox and text */
+.form-options {
+  margin: 8px 0;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center; /* vertically center checkbox and text */
+}
+
+.form-options label {
+  display: flex;
+  align-items: center;
+  gap: 6px; /* space between checkbox and text */
+  cursor: pointer;
+}
+
+.form-options input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: #4facfe; /* theme-colored checkbox */
+}
+.submit-btn{
+  width: 100%;
+}

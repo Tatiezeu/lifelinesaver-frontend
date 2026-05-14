@@ -1,0 +1,104 @@
+.livemap-container {
+  height: 100%;
+  width: 100%;
+  padding: 10px;
+  background: var(--bg-primary);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.map {
+  height: 85vh;
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+
+.popup-card {
+  font-size: 13px;
+  line-height: 1.4;
+  min-width: 260px;
+}
+
+.popup-title {
+  margin: 0 0 10px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #1e293b;
+  border-bottom: 2px solid #f1f5f9;
+  padding-bottom: 6px;
+}
+
+.popup-scrollable {
+  max-height: 300px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.alert-detail-item {
+  padding: 10px 0;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.alert-detail-item:last-child {
+  border-bottom: none;
+}
+
+.alert-info p {
+  margin: 2px 0;
+  color: #475569;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 700;
+  margin-top: 4px;
+  text-transform: uppercase;
+}
+
+.status-badge.pending { background: #fee2e2; color: #ef4444; }
+.status-badge.active { background: #fef3c7; color: #d97706; }
+.status-badge.resolved { background: #dcfce7; color: #16a34a; }
+.status-badge.declined { background: #f1f5f9; color: #64748b; }
+
+.action-buttons-container {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.btn-action {
+  flex: 1;
+  padding: 6px;
+  border: none;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-action.accept {
+  background: #4f46e5;
+  color: white;
+}
+
+.btn-action.decline {
+  background: #f1f5f9;
+  color: #64748b;
+}
+
+.btn-action.complete {
+  background: #10b981;
+  color: white;
+  width: 100%;
+}
+
+.btn-action:hover {
+  filter: brightness(0.9);
+  transform: translateY(-1px);
+}

@@ -1,0 +1,31 @@
+/* Global layout */
+body, html, #root {
+  margin: 0;
+  padding: 0;
+  height: auto;            /* allow content to expand naturally */
+  width: 100%;
+  font-family: Arial, sans-serif;
+  background-color: #f9fafb; /* Light neutral background */
+  overflow-x: hidden;       /* prevent horizontal scroll */
+  overflow-y: auto;         /* allow full vertical scroll */
+}
+
+.app-container {
+  display: flex;
+  min-height: 100%;       /* allow container to expand with content */
+  width: 100vw;
+  background-color: transparent;
+  overflow: visible;      /* make scrollable */
+}
+
+.content-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;       /* grow with content */
+  width: 100%;
+  overflow-y: visible;    /* content scrolls naturally */
+  background-color: #ffffff;
+  box-sizing: border-box;
+  padding: 1.5rem 0;      /* optional padding top/bottom */
+}
