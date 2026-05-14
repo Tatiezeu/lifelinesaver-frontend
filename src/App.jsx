@@ -22,15 +22,25 @@ import AdminSidebar from './components/AdminSidebar';
 import AdminTopbar from './components/Topbar';
 import AdminHome from './pages/AdminHome';
 
-// ─── Emergency Layout ────────────────────────────────────────────────────────
+// Client dashboard
+import ClientSidebar from './client/components/Sidebar';
+import ClientTopbar from './client/components/Topbar';
+import ClientDashboard from './client/pages/Dashboard';
+import ClientMaps from './client/pages/Maps';
+import ClientEmergency from './client/pages/Emergency';
+import ClientNotifications from './client/pages/Notifications';
+import ClientProfile from './client/pages/Profile';
+
+// ─── Shared layout style ──────────────────────────────────────────────────────
+const dashLayout = { display: 'flex', width: '100vw', height: '100vh', overflow: 'hidden' };
+const sidebarWrap = { width: '250px', flexShrink: 0, height: '100vh' };
+const mainWrap = { flex: 1, display: 'flex', flexDirection: 'column', height: '100vh', overflow: 'hidden' };
+
+// ─── Emergency Layout ─────────────────────────────────────────────────────────
 const EmergencyLayout = () => (
-  <div style={{ display: 'flex', width: '100vw', height: '100vh', overflow: 'hidden' }}>
-    {/* Fixed-width sidebar */}
-    <div style={{ width: '250px', flexShrink: 0, height: '100vh' }}>
-      <EmergencySidebar />
-    </div>
-    {/* Everything else: topbar + scrollable page content */}
-    <div style={{ flex: 1, display: 'flex', flexDirection: 'column', height: '100vh', overflow: 'hidden' }}>
+  <div style={dashLayout}>
+    <div style={sidebarWrap}><EmergencySidebar /></div>
+    <div style={mainWrap}>
       <EmergencyTopbar />
       <div style={{ flex: 1, overflowY: 'auto', padding: '24px', backgroundColor: '#f3f4f6' }}>
         <Outlet />
@@ -41,15 +51,24 @@ const EmergencyLayout = () => (
 
 // ─── Admin Layout ─────────────────────────────────────────────────────────────
 const AdminLayout = () => (
-  <div style={{ display: 'flex', width: '100vw', height: '100vh', overflow: 'hidden' }}>
-    {/* Fixed-width sidebar */}
-    <div style={{ width: '250px', flexShrink: 0, height: '100vh' }}>
-      <AdminSidebar />
-    </div>
-    {/* Everything else: topbar + scrollable page content */}
-    <div style={{ flex: 1, display: 'flex', flexDirection: 'column', height: '100vh', overflow: 'hidden' }}>
+  <div style={dashLayout}>
+    <div style={sidebarWrap}><AdminSidebar /></div>
+    <div style={mainWrap}>
       <AdminTopbar />
       <div style={{ flex: 1, overflowY: 'auto', padding: '24px', backgroundColor: '#f3f4f6' }}>
+        <Outlet />
+      </div>
+    </div>
+  </div>
+);
+
+// ─── Client Layout ────────────────────────────────────────────────────────────
+const ClientLayout = () => (
+  <div style={dashLayout}>
+    <div style={sidebarWrap}><ClientSidebar /></div>
+    <div style={mainWrap}>
+      <ClientTopbar />
+      <div style={{ flex: 1, overflowY: 'auto', padding: '24px', backgroundColor: '#f8fafc' }}>
         <Outlet />
       </div>
     </div>
@@ -82,6 +101,15 @@ export default function App() {
           <Route path="livemap" element={<EmergencyLiveMap />} />
           <Route path="history" element={<EmergencyHistory />} />
           <Route path="settings" element={<EmergencySettings />} />
+        </Route>
+
+        {/* Client dashboard */}
+        <Route path="/client" element={<ClientLayout />}>
+          <Route index element={<ClientDashboard />} />
+          <Route path="maps" element={<ClientMaps />} />
+          <Route path="emergency" element={<ClientEmergency />} />
+          <Route path="notifications" element={<ClientNotifications />} />
+          <Route path="profile" element={<ClientProfile />} />
         </Route>
       </Routes>
     </Router>

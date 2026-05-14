@@ -1,0 +1,80 @@
+.cp-page { padding: 28px 32px; max-width: 80vw; }
+
+.cp-page-header {
+  display: flex; justify-content: space-between; align-items: flex-start;
+  margin-bottom: 28px;
+}
+.cp-title { font-size: 1.9rem; font-weight: 700; color: #0f172a; margin: 0 0 4px; }
+.cp-subtitle { font-size: 0.95rem; color: #64748b; margin: 0; }
+
+.cp-edit-btn, .cp-save-btn, .cp-cancel-btn {
+  display: flex; align-items: center; gap: 7px;
+  padding: 10px 20px; border-radius: 8px; border: none;
+  font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: all 0.2s;
+}
+.cp-edit-btn { background: #3b82f6; color: #fff; }
+.cp-edit-btn:hover { background: #2563eb; }
+.cp-save-btn { background: #22c55e; color: #fff; }
+.cp-save-btn:hover { background: #16a34a; }
+.cp-cancel-btn { background: #f1f5f9; color: #475569; }
+.cp-cancel-btn:hover { background: #e2e8f0; }
+
+.cp-card {
+  background: #fff;
+  border-radius: 16px;
+  border: 1px solid #f1f5f9;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  overflow: hidden;
+}
+
+.cp-avatar-section {
+  text-align: center;
+  padding: 36px 24px 28px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.cp-avatar {
+  width: 88px; height: 88px; border-radius: 50%;
+  background: #3b82f6; color: #fff;
+  font-size: 2rem; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 14px;
+}
+.cp-name { font-size: 1.4rem; font-weight: 700; color: #0f172a; margin: 0 0 4px; }
+.cp-email-sub { font-size: 0.88rem; color: #64748b; margin: 0; }
+
+.cp-section {
+  padding: 24px 28px;
+  border-bottom: 1px solid #f1f5f9;
+}
+.cp-section:last-child { border-bottom: none; }
+
+.cp-section-title {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 0.95rem; font-weight: 700; color: #0f172a; margin-bottom: 20px;
+}
+
+.cp-fields-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 18px;
+}
+
+.cp-field-group label {
+  display: block; font-size: 0.82rem; color: #64748b;
+  font-weight: 500; margin-bottom: 6px;
+}
+
+.cp-input-wrap {
+  display: flex; align-items: center;
+  border: 1px solid #e2e8f0; border-radius: 9px;
+  padding: 10px 14px; gap: 10px;
+  background: #f8fafc; transition: border 0.2s;
+}
+.cp-input-wrap:focus-within { border-color: #3b82f6; background: #fff; }
+
+.cp-input-icon { color: #94a3b8; flex-shrink: 0; font-size: 0.9rem; }
+
+.cp-input-wrap input {
+  border: none; background: transparent; outline: none;
+  font-size: 0.9rem; color: #1e293b; width: 100%; font-weight: 500;
+}
+.cp-input-wrap input:disabled { color: #475569; cursor: default; }

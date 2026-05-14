@@ -1,0 +1,72 @@
+.client-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 28px;
+  background: #fff;
+  border-bottom: 1px solid #e8ecf0;
+  flex-shrink: 0;
+  z-index: 100;
+}
+
+.client-topbar-left {
+  flex: 1;
+}
+
+.client-topbar-date {
+  font-size: 0.9rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.client-topbar-center {
+  flex: 1;
+  text-align: center;
+}
+
+.client-topbar-time {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1e293b;
+  font-family: 'Courier New', monospace;
+}
+
+.client-topbar-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.client-topbar-icon-btn {
+  background: #f1f5f9;
+  border: none;
+  border-radius: 8px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #475569;
+  transition: all 0.2s ease;
+}
+
+.client-topbar-icon-btn:hover {
+  background: #e2e8f0;
+  color: #1e293b;
+}
+
+.client-topbar-profile {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.client-topbar-username {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #1e293b;
+}
