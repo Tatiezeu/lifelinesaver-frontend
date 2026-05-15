@@ -17,6 +17,19 @@ const AdminHome = () => {
     { name: 'Suspended', value: stats.suspended, color: '#dc3545' },
   ];
 
+  const [showWelcome, setShowWelcome] = useState(localStorage.getItem('showWelcome') === 'true');
+  const username = localStorage.getItem('username') || 'Admin';
+
+  useEffect(() => {
+    if (showWelcome) {
+      const timer = setTimeout(() => {
+        setShowWelcome(false);
+        localStorage.removeItem('showWelcome');
+      }, 4000);
+      return () => clearTimeout(timer);
+    }
+  }, [showWelcome]);
+
   useEffect(() => {
     const fetchStats = async () => {
       try {
@@ -34,7 +47,18 @@ const AdminHome = () => {
   }, []);
 
   return (
-    <div className="admin-home">
+    <div className="admin-home" style={{ position: 'relative' }}>
+      {showWelcome && (
+        <div style={{
+          position: 'absolute', top: '-10px', right: '0',
+          background: '#fff', padding: '12px 24px', borderRadius: '12px',
+          boxShadow: '0 10px 25px rgba(0,0,0,0.08)',
+          borderLeft: '4px solid #007bff',
+          zIndex: 100, fontSize: '0.95rem', fontWeight: '600', color: '#1e293b'
+        }}>
+          Welcome back, <span style={{ color: '#007bff' }}>{username}</span>! 👑
+        </div>
+      )}
       <h2 style={{ marginBottom: '20px', color: '#1e1e2f' }}>Dashboard Overview</h2>
       
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '20px', marginBottom: '40px' }}>

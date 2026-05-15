@@ -8,6 +8,7 @@ import Pack from './components/Pack';
 import Settings from './pages/Settings';
 import Users from './pages/Users';
 import Profile from './pages/Profile';
+import Logout from './pages/Logout';
 
 // Emergency dashboard
 import EmergencyDashboard from './emergency/pages/Dashboard';
@@ -93,6 +94,7 @@ export default function App() {
           <Route index element={<AdminHome />} />
           <Route path="users" element={<Users />} />
           <Route path="settings" element={<Settings />} />
+          <Route path="logout" element={<Logout />} />
         </Route>
 
         {/* Emergency dashboard */}
@@ -101,6 +103,7 @@ export default function App() {
           <Route path="livemap" element={<EmergencyLiveMap />} />
           <Route path="history" element={<EmergencyHistory />} />
           <Route path="settings" element={<EmergencySettings />} />
+          <Route path="logout" element={<Logout />} />
         </Route>
 
         {/* Client dashboard */}
@@ -110,6 +113,7 @@ export default function App() {
           <Route path="emergency" element={<ClientEmergency />} />
           <Route path="notifications" element={<ClientNotifications />} />
           <Route path="profile" element={<ClientProfile />} />
+          <Route path="logout" element={<Logout />} />
         </Route>
       </Routes>
     </Router>

@@ -78,3 +78,47 @@
   font-size: 0.9rem; color: #1e293b; width: 100%; font-weight: 500;
 }
 .cp-input-wrap input:disabled { color: #475569; cursor: default; }
+
+/* ── Avatar with camera upload ── */
+.cp-avatar-wrap {
+  position: relative;
+  width: 88px;
+  margin: 0 auto 14px;
+  display: inline-block;
+}
+
+.cp-avatar-img {
+  width: 88px; height: 88px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #3b82f6;
+  display: block;
+}
+
+.cp-avatar-cam {
+  position: absolute; bottom: 0; right: 0;
+  width: 28px; height: 28px;
+  background: #3b82f6; color: #fff;
+  border: 2px solid #fff; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; transition: background 0.2s;
+}
+.cp-avatar-cam:hover { background: #2563eb; }
+
+/* ── Loading / spinner ── */
+.cp-loading-state {
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 14px; height: 300px; color: #64748b;
+}
+
+@keyframes cp-spin-kf { to { transform: rotate(360deg); } }
+.cp-spin { animation: cp-spin-kf 0.8s linear infinite; }
+
+/* ── Status messages ── */
+.cp-msg {
+  padding: 10px 16px; border-radius: 8px;
+  font-size: 0.88rem; font-weight: 600; margin-bottom: 14px;
+}
+.cp-error   { background: #fef2f2; color: #dc2626; border: 1px solid #fecaca; }
+.cp-success { background: #f0fdf4; color: #16a34a; border: 1px solid #bbf7d0; }

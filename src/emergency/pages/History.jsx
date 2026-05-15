@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './History.css';
 import { FaTrashAlt } from 'react-icons/fa';
+import ConfirmationModal from '../../components/ConfirmationModal';
 
 const EmergencyHistory = () => {
   const [alerts, setAlerts] = useState([]);
@@ -50,21 +51,35 @@ const EmergencyHistory = () => {
     };
   }, []);
 
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalConfig, setModalConfig] = useState({ type: '', id: null });
+
   const handleDelete = async (id) => {
-    try {
-      await axios.delete(`${API_URL}${id}/`, getConfig());
-      setAlerts(alerts.filter(alert => alert.id !== id));
-    } catch (error) {
-      console.error('Error deleting alert:', error);
-    }
+    setModalConfig({ type: 'single', id });
+    setIsModalOpen(true);
   };
 
   const handleClearAll = async () => {
-    try {
-      await Promise.all(alerts.map(alert => axios.delete(`${API_URL}${alert.id}/`, getConfig())));
-      setAlerts([]);
-    } catch (error) {
-      console.error('Error clearing alerts:', error);
+    setModalConfig({ type: 'all', id: null });
+    setIsModalOpen(true);
+  };
+
+  const confirmAction = async () => {
+    setIsModalOpen(false);
+    if (modalConfig.type === 'single') {
+      try {
+        await axios.delete(`${API_URL}/${modalConfig.id}`, getConfig());
+        setAlerts(alerts.filter(alert => alert.id !== modalConfig.id));
+      } catch (error) {
+        console.error('Error deleting alert:', error);
+      }
+    } else {
+      try {
+        await axios.delete(API_URL, getConfig());
+        setAlerts([]);
+      } catch (error) {
+        console.error('Error clearing alerts:', error);
+      }
     }
   };
 
@@ -105,6 +120,17 @@ const EmergencyHistory = () => {
           Clear All History
         </button>
       )}
+
+      <ConfirmationModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        onConfirm={confirmAction}
+        title={modalConfig.type === 'all' ? 'Clear All History' : 'Delete Alert'}
+        message={modalConfig.type === 'all' 
+          ? 'Are you sure you want to clear ALL alert history? This will permanently delete everything from the database.'
+          : 'Are you sure you want to delete this alert? This action cannot be undone.'
+        }
+      />
     </div>
   );
 };

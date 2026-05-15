@@ -29,54 +29,35 @@ export default function Signin() {
       localStorage.setItem("access", data.access);
       localStorage.setItem("refresh", data.refresh);
 
-      // 3️⃣ Fetch profile to get role + username
-      try {
-        const profileRes = await axios.get(
-          "http://localhost:8080/LifelineJavaBackend/api/authentication/profile",
-          {
-            headers: {
-              "Content-Type": "application/json",
-              Authorization: `Bearer ${data.access}`,
-            },
-          }
-        );
+      const role = (data.role || "").toLowerCase();
+      localStorage.setItem("username", data.name || "");
+      localStorage.setItem("userEmail", data.email || email);
+      localStorage.setItem("role", role);
+      if (data.profile_picture) {
+        localStorage.setItem("profile_picture", data.profile_picture);
+      }
+      localStorage.setItem("showWelcome", "true"); // Ensure welcome message shows on load
 
-        const profileData = profileRes.data;
-
-        // Save role, name and profile picture to localStorage
-        localStorage.setItem("username", profileData.name || profileData.email);
-        localStorage.setItem("userEmail", profileData.email);
-        localStorage.setItem("role", profileData.role);
-        if (profileData.profile_picture) {
-          localStorage.setItem("profile_picture", profileData.profile_picture);
-        }
-
-        // ✅ Trigger welcome message for dashboards (only once after login)
-        localStorage.setItem("showWelcome", "true");
-
-        // Redirect based on role
-        const role = (profileData.role || "").toLowerCase();
-        if (role === "admin") {
-          navigate("/dashboard");
-        } else if (role === "emergencyservice" || role === "emergency service" || role === "hospital" || role === "police" || role === "dispatcher") {
-          navigate("/emergency");
-        } else {
-          // fallback redirect
-          navigate("/emergency");
-        }
-
-      } catch (profileErr) {
-        console.error("Error fetching profile:", profileErr);
-        setError("Login succeeded but failed to fetch profile.");
+      // 3️⃣ Redirect based on role
+      if (role === "admin") {
+        navigate("/admin");
+      } else if (role === "client") {
+        navigate("/client");
+      } else if (["emergency", "emergencyservice", "dispatcher", "paramedic"].includes(role)) {
+        navigate("/emergency");
+      } else if (role === "hospital") {
+        navigate("/hospital");
+      } else {
+        setError("Role not recognized: " + role);
       }
 
     } catch (err) {
-      if (err.response) {
-        setError(err.response.data.detail || "Login failed");
-      } else {
-        setError("Something went wrong. Please try again.");
-      }
       console.error("Login error:", err);
+      if (err.response && err.response.data && err.response.data.detail) {
+        setError(err.response.data.detail);
+      } else {
+        setError("Invalid email or password. Please try again.");
+      }
     }
   };
 

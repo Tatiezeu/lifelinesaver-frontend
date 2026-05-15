@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react'; 
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { getBackendBaseUrl } from '../config';
 import './Settings.css';
 import lifelineLogo from '../assets/logo.jpg';
 
 const Settings = () => {
+  const navigate = useNavigate();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [profilePic, setProfilePic] = useState(null);
@@ -17,23 +20,27 @@ const Settings = () => {
       if (!token) return;
 
       try {
-        const res = await axios.get('http://localhost:8080/LifelineJavaBackend/api/authentication/profile', {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
+        const res = await axios.get(`${getBackendBaseUrl()}/api/authentication/profile`, {
+          headers: { Authorization: `Bearer ${token}` },
         });
 
-        setName(res.data.name);
-        setEmail(res.data.email);
+        const data = res.data;
+        setName(data.name || '');
+        setEmail(data.email || '');
 
-        if (res.data.profile_picture) {
-          const baseUrl = "http://localhost:8080/LifelineJavaBackend";
-          // If the database returns the full URL or a relative path, handle it
-          const profilePicUrl = (res.data.profile_picture.startsWith('http') || res.data.profile_picture.startsWith('data:'))
-            ? res.data.profile_picture
-            : `${baseUrl}${res.data.profile_picture.startsWith('/') ? '' : '/'}${res.data.profile_picture}`;
-          setPreviewPic(profilePicUrl);
+        if (data.profile_picture) {
+          const pic = data.profile_picture.startsWith('http') || data.profile_picture.startsWith('data:')
+            ? data.profile_picture
+            : `${getBackendBaseUrl()}${data.profile_picture.startsWith('/') ? '' : '/'}${data.profile_picture}`;
+          setPreviewPic(pic);
+          localStorage.setItem('profile_picture', pic);
         }
+        
+        if (data.name) localStorage.setItem('username', data.name);
+        
+        // Ensure navbar is synced
+        window.dispatchEvent(new CustomEvent('profileUpdate'));
+
       } catch (err) {
         console.error('Error fetching profile:', err);
       }
@@ -45,10 +52,14 @@ const Settings = () => {
   const handleProfilePicChange = (e) => {
     const file = e.target.files[0];
     if (file) {
+      if (file.size > 1024 * 1024) { 
+        alert('Image is too large. Please select an image under 1MB.');
+        return;
+      }
       setProfilePic(file);
       const reader = new FileReader();
       reader.onloadend = () => {
-        setPreviewPic(reader.result); // This is now a base64 string
+        setPreviewPic(reader.result);
       };
       reader.readAsDataURL(file);
     }
@@ -63,7 +74,7 @@ const Settings = () => {
 
     try {
       const res = await axios.put(
-        `http://localhost:8080/LifelineJavaBackend/api/users/${email}`,
+        `${getBackendBaseUrl()}/api/users/${email}`,
         { 
           name, 
           email,
@@ -83,16 +94,15 @@ const Settings = () => {
       }
       
       window.dispatchEvent(new CustomEvent('profileUpdate'));
-      setMessage('Profile updated successfully! You will be logged out to apply changes...');
+      setMessage('Profile updated successfully! Redirecting to login...');
 
-      // Clear session and redirect to signin
       setTimeout(() => {
         localStorage.clear();
-        window.location.href = '/lifelinesaver/signin';
+        navigate('/signin');
       }, 2000);
     } catch (err) {
       console.error('Profile update error:', err);
-      setMessage('Failed to update profile.');
+      setMessage('Failed to update profile. Please try again.');
     }
   };
 

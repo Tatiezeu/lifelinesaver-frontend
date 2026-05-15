@@ -45,9 +45,26 @@ const quickActions = [
 
 const ClientDashboard = () => {
   const [activeAction, setActiveAction] = useState(null);
+  const [showWelcome, setShowWelcome] = useState(localStorage.getItem('showWelcome') === 'true');
+  const username = localStorage.getItem('username') || 'Client';
+
+  React.useEffect(() => {
+    if (showWelcome) {
+      const timer = setTimeout(() => {
+        setShowWelcome(false);
+        localStorage.removeItem('showWelcome');
+      }, 4000);
+      return () => clearTimeout(timer);
+    }
+  }, [showWelcome]);
 
   return (
     <div className="cd-page">
+      {showWelcome && (
+        <div className="cd-welcome-toast">
+          Welcome back, <span className="cd-welcome-name">{username}</span>! 👋
+        </div>
+      )}
       <div className="cd-header">
         <h1 className="cd-title">Dashboard</h1>
         <p className="cd-subtitle">Overview of your emergency alerts and vehicle status</p>

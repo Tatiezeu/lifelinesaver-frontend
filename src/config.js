@@ -28,6 +28,10 @@ export const setBackendBaseUrl = (url) => {
 export const getAlertsEndpoint = () => `${getBackendBaseUrl()}/api/alerts`;
 export const getAlertsReceiveEndpoint = () => `${getBackendBaseUrl()}/api/alerts/receive`;
 
+// Client-specific endpoints
+export const getClientProfileEndpoint = () => `${getBackendBaseUrl()}/api/client/profile`;
+export const getClientAlertsEndpoint  = () => `${getBackendBaseUrl()}/api/client/alerts`;
+
 export const getGoogleMapsApiKey = () => {
   const envKey = import.meta && import.meta.env && import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
   if (envKey) return envKey;

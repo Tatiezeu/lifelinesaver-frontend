@@ -53,12 +53,19 @@
   box-shadow: 0 0 0 20px rgba(239,68,68,0.15), 0 8px 30px rgba(239,68,68,0.4);
   transition: all 0.2s ease;
   letter-spacing: 2px;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
 }
+
+.ce-sos-btn:focus { outline: none; }
+.ce-sos-btn:active { outline: none; }
 
 .ce-sos-btn:hover { transform: scale(1.04); }
 .ce-sos-holding {
   transform: scale(0.96) !important;
   box-shadow: 0 0 0 35px rgba(239,68,68,0.2), 0 8px 30px rgba(239,68,68,0.5) !important;
+  outline: none;
 }
 
 .ce-sos-footer { font-size: 0.82rem; color: #94a3b8; margin-top: 24px; }
@@ -122,3 +129,122 @@
   cursor: pointer; transition: background 0.2s;
 }
 .ce-cancel-btn:hover { background: #e2e8f0; }
+
+/* ── Hold progress ring ──────────────────── */
+.ce-hold-progress {
+  position: relative;
+  width: 210px;
+  height: 210px;
+  margin: 0 auto 16px;
+}
+
+.ce-progress-ring {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  transform: rotate(-90deg);
+}
+
+.ce-progress-bg {
+  fill: none;
+  stroke: rgba(239,68,68,0.12);
+  stroke-width: 6;
+}
+
+.ce-progress-fill {
+  fill: none;
+  stroke: #ef4444;
+  stroke-width: 6;
+  stroke-linecap: round;
+  transition: stroke-dasharray 0.06s linear;
+}
+
+/* ── Spinner ─────────────────────────────── */
+@keyframes ce-spin-kf {
+  to { transform: rotate(360deg); }
+}
+.ce-spin { animation: ce-spin-kf 0.8s linear infinite; }
+
+.ce-sos-loading { opacity: 0.75; cursor: not-allowed !important; }
+
+/* ── Error message ───────────────────────── */
+.ce-error-msg {
+  color: #ef4444;
+  font-size: 0.85rem;
+  margin: 8px 0;
+  text-align: center;
+}
+
+/* ── Countdown Overlay ───────────────────── */
+.ce-countdown-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(8px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  animation: fadeIn 0.3s ease;
+}
+
+.ce-countdown-content {
+  text-align: center;
+}
+
+.ce-countdown-ring-wrap {
+  position: relative;
+  width: 240px;
+  height: 240px;
+  margin: 0 auto 30px;
+}
+
+.ce-countdown-svg {
+  width: 100%; height: 100%;
+  transform: rotate(-90deg);
+}
+
+.ce-ring-bg { fill: none; stroke: rgba(255,255,255,0.1); stroke-width: 5; }
+.ce-ring-fill {
+  fill: none;
+  stroke: #ef4444;
+  stroke-width: 5;
+  stroke-linecap: round;
+  transition: stroke-dasharray 0.06s linear;
+}
+
+.ce-countdown-text {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 5rem;
+  font-weight: 800;
+  color: #ef4444;
+}
+
+.ce-overlay-title { font-size: 2rem; font-weight: 800; margin: 0 0 10px; letter-spacing: 2px; }
+.ce-overlay-sub { font-size: 1.1rem; color: #94a3b8; }
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+/* ── Post-SOS actions ────────────────────── */
+.ce-post-sos-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.ce-another-btn {
+  background: #3b82f6;
+  color: #fff;
+  border: none;
+  padding: 14px;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(59,130,246,0.3);
+  transition: all 0.2s;
+}
+.ce-another-btn:hover { background: #2563eb; transform: translateY(-2px); }

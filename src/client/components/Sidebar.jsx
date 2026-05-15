@@ -48,10 +48,10 @@ const ClientSidebar = () => {
       </nav>
 
       <div className="client-sidebar-footer">
-        <button className="client-logout-btn" onClick={handleLogout}>
+        <NavLink to="/client/logout" className={({ isActive }) => `client-nav-link${isActive ? ' active' : ''}`}>
           <FaSignOutAlt className="client-nav-icon" />
           <span>Logout</span>
-        </button>
+        </NavLink>
       </div>
     </div>
   );

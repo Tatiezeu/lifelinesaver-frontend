@@ -164,11 +164,16 @@ const EmergencyLiveMap = () => {
 
         {/* Grouped alerts markers */}
         {Object.values(groupedAlerts).map((alertsAtLocation, idx) => {
-          const { latitude, longitude } = alertsAtLocation[0];
+          const first = alertsAtLocation[0];
+          const lat = parseFloat(first.latitude);
+          const lng = parseFloat(first.longitude);
+          
+          if (isNaN(lat) || isNaN(lng)) return null;
+
           return (
             <Marker
               key={idx}
-              position={[latitude, longitude]}
+              position={[lat, lng]}
               icon={getMarkerIcon(alertsAtLocation)}
             >
               <Popup className="alert-popup">

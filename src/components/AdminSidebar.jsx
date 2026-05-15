@@ -25,7 +25,7 @@ const AdminSidebar = () => {
           <FaCog className="sidebar-icon" />
           <span>Settings</span>
         </NavLink>
-        <NavLink to="/signin" className="sidebar-link">
+        <NavLink to="/admin/logout" className="sidebar-link">
           <FaSignOutAlt className="sidebar-icon" />
           <span>Logout</span>
         </NavLink>

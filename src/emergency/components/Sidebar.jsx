@@ -74,7 +74,7 @@ const EmergencySidebar = () => {
   return (
     <div className="sidebar emergency-sidebar">
       {/* App Logo and Name */}
-      <div className="sidebar-header" onClick={createAlert} style={{cursor: 'pointer'}}>
+      <div className="sidebar-header">
         <img src={lifelineLogo} alt="Lifeline Logo" className="logo" />
         <h1 className="sidebar-title">Lifeline Saver</h1>
       </div>

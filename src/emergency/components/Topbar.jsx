@@ -86,6 +86,13 @@ const EmergencyTopbar = () => {
     return () => clearInterval(interval);
   }, []);
 
+  // --- Listen for profile updates ---
+  useEffect(() => {
+    const handler = () => fetchResponderProfile();
+    window.addEventListener('profileUpdate', handler);
+    return () => window.removeEventListener('profileUpdate', handler);
+  }, []);
+
   // --- Fetch SOS alerts ---
   const fetchAlerts = async () => {
     try {
@@ -100,11 +107,12 @@ const EmergencyTopbar = () => {
       const items = Array.isArray(res.data) ? res.data : res.data.results || [];
       const mapped = items.map(a => {
         const d = a.created_at || a.createdAt;
+        const userName = a.user?.name || 'Unknown User';
         return {
           id: a.id,
-          title: a.alert_type ? `${a.alert_type} Alert - ${a.address || ''}`.trim() : `SOS Alert - ${a.address || ''}`.trim(),
+          title: `Emergency - ${userName}`,
           time: d ? new Date(d).toLocaleString() : 'Just now',
-          address: a.address || '',
+          address: a.address || 'Bako\'o, Yaoundé',
           status: a.status || 'Pending',
           read: false,
         };
@@ -127,11 +135,12 @@ const EmergencyTopbar = () => {
     const handleNewAlert = (event) => {
       const newAlert = event.detail;
       const d = newAlert.created_at || newAlert.createdAt;
+      const userName = newAlert.user?.name || 'Unknown User';
       const formattedAlert = {
         id: newAlert.id,
-        title: newAlert.alert_type ? `${newAlert.alert_type} Alert - ${newAlert.address || ''}`.trim() : `SOS Alert - ${newAlert.address || ''}`.trim(),
+        title: `Emergency - ${userName}`,
         time: d ? new Date(d).toLocaleString() : new Date().toLocaleString(),
-        address: newAlert.address || '',
+        address: newAlert.address || 'Bako\'o, Yaoundé',
         status: newAlert.status || 'Pending',
         read: false,
       };

@@ -1,15 +1,18 @@
 import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Logout.css';
 
 const EmergencyLogout = () => {
+  const navigate = useNavigate();
+
   useEffect(() => {
     // Clear any auth tokens or user data
     localStorage.clear();
     sessionStorage.clear();
 
-    // Redirect to login page immediately
-    window.location.href = '/lifelinesaver/signin';
-  }, []);
+    // Redirect to login page immediately using navigate
+    navigate('/signin');
+  }, [navigate]);
 
   return (
     <div className="logout-container">
